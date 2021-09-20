@@ -147,11 +147,24 @@ void test_input()
   }while(ch > 0);
 }
 
+void input_terminal()
+{
+  char ch = 0;
+  char keycode = 0;
+  do{
+    keycode = get_input_keycode();
+    if(keycode == KEY_ENTER){
+      print_new_line();
+      print_string("Terminal > ");
+    }
+  }while(ch > 0);
+}
+
 void kernel_entry()
 {
   init_vga(WHITE, BLUE);
-  print_string("Type here, one key per second, ENTER to go to next line");
-  print_new_line();
+  print_string("Terminal v1:");
+  input_terminal();
   test_input();
 
 }
