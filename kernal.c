@@ -111,6 +111,16 @@ char get_input_keycode()
   return ch;
 }
 
+char get_input_keycode_five()
+{
+  char ch = 0;
+  while((ch = inb(KEYBOARD_PORT)) != 0){
+    if(ch > 0)
+      return ch;
+  }
+  return ch;
+}
+
 /*
 keep the cpu busy for doing nothing(nop)
 so that io port will not be processed by cpu
@@ -160,11 +170,35 @@ void input_terminal()
   }while(ch > 0);
 }
 
+void main_terminal()
+{
+  char ch = 0;
+  char keycode = 0;
+  char keycodea = 0;
+  char keycodeb = 0;
+  char keycodec = 0;
+  char keycoded = 0;
+  do{
+    keycode = get_input_keycode();
+    if(keycode == KEY_S){
+      do{
+        keycode = get_input_keycode();
+        if(keycodea == KEY_T){
+             keycodea = get_input_keycode();
+             print_new_line();
+             #include start.c
+             print_new_line();
+             print_string("Terminal v1:");
+        }
+  }while(ch > 0);
+      
+}
+
 void kernel_entry()
 {
   init_vga(WHITE, BLUE);
   print_string("Terminal v1:");
-  input_terminal();
-  test_input();
+  print_new_line();
+  main_terminal();
 
 }
