@@ -208,5 +208,6 @@ void kernel_entry()
   print_string("Booting from Kernal...");
   print_new_line();
   #include start.c
+  call setup()
   
 }
