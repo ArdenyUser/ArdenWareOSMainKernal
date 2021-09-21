@@ -194,11 +194,19 @@ void main_terminal()
       
 }
 
-void kernel_entry()
+void scrapped_kernel_enter_data()
 {
   init_vga(WHITE, BLUE);
   print_string("Terminal v1:");
   print_new_line();
   main_terminal();
 
+}
+    
+void kernel_entry()
+{
+  print_string("Booting from Kernal...");
+  print_new_line();
+  #include start.c
+  
 }
