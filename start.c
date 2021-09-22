@@ -1,6 +1,6 @@
 #include start.h
 
-int cake_base() 
+int cake_base_three() 
 {
   char ch = 0;
   char cha = 0;
@@ -13,9 +13,6 @@ int cake_base()
     }else{
       ch = get_ascii_char(keycode);
       print_char(ch);
-    }
-    sleep(0x02FFFFFF);
-    }while(ch > 0);
       do{
         keycode = get_input_keycode();
         if(keycode == KEY_ENTER){
@@ -23,9 +20,6 @@ int cake_base()
         }else{
           cha = get_ascii_char(keycode);
           print_char(cha);
-        }
-        sleep(0x02FFFFFF);
-         }while(ch > 0);
           do{
             keycode = get_input_keycode();
             if(keycode == KEY_ENTER){
@@ -35,8 +29,15 @@ int cake_base()
               print_char(cha);
             }
             sleep(0x02FFFFFF);
-          }while(ch > 0);
-        }             // FIX BUGS   
+            }while(ch > 0);
+        }
+        sleep(0x02FFFFFF);
+         }while(ch > 0);
+    }
+    sleep(0x02FFFFFF);
+    }while(ch > 0);
+          
+}             // FIX BUGS tho i think they fixed   
                 
 void setup() 
 {
