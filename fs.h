@@ -10,8 +10,8 @@
  * linux-api@vger.kernel.org.
  */
 
-#include <linux/limits.h>
-#include <linux/ioctl.h>
+#include <limits.h>
+#include <ioctl.h>
 #include <linux/types.h>
 #ifndef __KERNEL__
 #include <linux/fscrypt.h>
