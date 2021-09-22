@@ -11,7 +11,7 @@
  */
 
 #include <limits.h>
-#include <ioctl.h>
+#include <ioctl-head.h>
 #include <linux/types.h>
 #ifndef __KERNEL__
 #include <linux/fscrypt.h>
